@@ -251,7 +251,6 @@
       "name": "fhir-viewer",
       "location": "westeurope",
       "properties": {
-        "properties": {
           "resourceTypes": [
             {
               "name": "website",
@@ -266,7 +265,6 @@
               "routingType": "Proxy"
             }
           ]
-        }
       }
     }
   ],
