@@ -249,7 +249,7 @@
       "type": "Microsoft.CustomProviders/resourceProviders",
       "apiVersion": "2018-09-01-preview",
       "name": "fhir-viewer",
-      "location": "[parameters('location')]",
+      "location": "westeurope",
       "properties": {
         "properties": {
           "resourceTypes": [
