@@ -244,28 +244,6 @@
       "dependsOn": [
         "[resourceId('Microsoft.Web/sites', parameters('appname'))]"
       ]
-    },
-    {
-      "type": "Microsoft.CustomProviders/resourceProviders",
-      "apiVersion": "2018-09-01-preview",
-      "name": "fhir-viewer",
-      "location": "westeurope",
-      "properties": {
-          "resourceTypes": [
-            {
-              "name": "website",
-              "routingType": "Proxy",
-              "endpoint": "[concat('https://', parameters('appname'), '.azurewebsites.net')]"
-            }
-          ],
-          "actions": [
-            {
-              "endpoint": "[concat('https://', parameters('appname'), '.azurewebsites.net')]",
-              "name": "website",
-              "routingType": "Proxy"
-            }
-          ]
-      }
     }
   ],
   "outputs": {}
