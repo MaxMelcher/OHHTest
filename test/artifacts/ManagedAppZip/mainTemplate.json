@@ -263,10 +263,5 @@
       }
     }
   ],
-  "outputs": {
-    "SiteFQDN": {
-      "type": "string",
-      "value": "[concat('https://', parameters('appname'), '.azurewebsites.net')]"
-    }
-  }
+  "outputs": {}
 }
