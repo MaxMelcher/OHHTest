@@ -258,6 +258,13 @@
               "routingType": "Proxy",
               "endpoint": "[concat('https://', parameters('appname'), '.azurewebsites.net')]"
             }
+          ],
+          "actions": [
+            {
+              "endpoint": "[concat('https://', parameters('appname'), '.azurewebsites.net')]",
+              "name": "website",
+              "routingType": "Proxy"
+            }
           ]
         }
       }
