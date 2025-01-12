@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
+  "handler": "Microsoft.Azure.CreateUIDef",
+  "version": "0.1.2-preview",
+  "parameters": {
+    "basics": [],
+    "steps": [
+      {
+        "name": "container",
+        "label": "Application setup",
+        "elements": [
+          {
+            "name": "containerInfo",
+            "type": "Microsoft.Common.TextBlock",
+            "visible": true,
+            "options": {
+              "text": "We deploy the application on Azure App Service."
+            }
+          },
+          {
+            "name": "appname",
+            "type": "Microsoft.Common.TextBox",
+            "label": "Hostname of the application",
+            "defaultValue": "fhir-viewer-",
+            "toolTip": "The hostname of the application - the app will be available at https://[hostname].azurewebsites.net/",
+            "constraints": {
+              "required": true,
+              "regex": "^[a-z0-9A-Z-]{3,79}$",
+              "validationMessage": "The name of the site is required and can only contain letters and numbers"
+            },
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "outputs": {
+      "location": "[location()]",
+      "appname": "[steps('container').appname]"
+    }
+  }
+}
