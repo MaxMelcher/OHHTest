@@ -24,7 +24,7 @@
     "port": 8080,
     "identityName": "umi-fhir-viewer",
     "keyvaultName": "[take(concat('kv-', parameters('appname')),24)]",
-    "roleDefinitionId": "00482a5a-887f-4fb3-b363-3b7fe8e74483",
+    "roleDefinitionId": "00482a5a-887f-4fb3-b363-3b7fe8e74483"
   },
   "resources": [
     {
@@ -244,6 +244,23 @@
       "dependsOn": [
         "[resourceId('Microsoft.Web/sites', parameters('appname'))]"
       ]
+    },
+    {
+      "type": "Microsoft.CustomProviders/resourceProviders",
+      "apiVersion": "2018-09-01-preview",
+      "name": "fhir-viewer",
+      "location": "[parameters('location')]",
+      "properties": {
+        "properties": {
+          "resourceTypes": [
+            {
+              "name": "website",
+              "routingType": "Proxy",
+              "endpoint": "[concat('https://', parameters('appname'), '.azurewebsites.net')]"
+            }
+          ]
+        }
+      }
     }
   ],
   "outputs": {

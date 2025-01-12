@@ -11,7 +11,7 @@
                     {
                         "displayName": "FHIR Viewer",
                         "type": "link",
-                        "path": "[concat('https://', parameters('appname'), '.azurewebsites.net')]",
+                        "path": "website",
                         "icon": "link"
                     },
                     {
