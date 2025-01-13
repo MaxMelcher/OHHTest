@@ -6,7 +6,7 @@
             "kind": "Overview",
             "properties": {
                 "header": "FHIR Viewer",
-                "description": "Promote our FHIR Viewer on the Marketplace.",
+                "description": "Access your FHIR Viewer Instance: [FHIR Viewer](https://fhir-viewer-instance-url)",
                 "commands": [
                     {
                         "displayName": "FHIR Viewer",
